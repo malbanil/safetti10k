@@ -1,0 +1,20 @@
+2024-04-22 15:22:09.720809 : Error - El archivo CONSOLIDADO no existe..
+2024-04-22 15:24:20.887273 : Error - El archivo CONSOLIDADO no existe..
+2024-04-22 15:50:59.085398 : Notice - Match de reportes realizado!!..
+2024-04-22 15:52:35.324991 : Notice - Match de reportes realizado!!..
+2024-04-22 16:10:29.859336 : Notice - Match de reportes realizado!!..
+2024-04-22 16:13:43.590577 : Notice - Match de reportes realizado!!..
+2024-04-22 16:16:14.080960 : Notice - Match de reportes realizado!!..
+2024-04-22 16:17:29.821002 : Notice - Match de reportes realizado!!..
+2024-04-22 16:22:43.230153 : Notice - Match de reportes realizado!!..
+2024-04-22 16:43:03.576131 : Notice - Match de reportes realizado!!..
+2024-04-22 16:47:54.106699 : Notice - Match de reportes realizado!!..
+2024-04-22 17:40:28.736857 : Notice - Match de reportes realizado!!..
+2024-04-22 17:44:22.296455 : Notice - Match de reportes realizado!!..
+2024-04-22 17:45:11.835002 : Error - El archivo CONSOLIDADO no existe..
+2024-04-22 17:45:16.383738 : Notice - Match de reportes realizado!!..
+2024-04-23 08:28:25.592675 : Error - El archivo CONSOLIDADO no existe..
+2024-04-23 08:28:30.371165 : Notice - Match de reportes realizado!!..
+2024-04-23 09:44:09.143774 : Error - El archivo CONSOLIDADO no existe..
+2024-04-23 09:45:07.895282 : Error - El archivo CONSOLIDADO no existe..
+2024-04-23 09:45:11.927166 : Notice - Match de reportes realizado!!..
