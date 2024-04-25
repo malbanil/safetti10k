@@ -127,8 +127,10 @@ def toggle_mode():
 
 def match_report():
     dfform = pd.read_excel(EX_FILE) # create DataFrame
+    dfform['idNumber'] = dfform['idNumber'].astype(str)
     dfform['idNumber'] = dfform['idNumber'].str.replace('.', '')
     dfform['idNumber'] = dfform['idNumber'].str.replace(',', '')
+
     #dfwompy = pd.read_csv(WOMPY_FILE,sep=';')
     dfwompy = pd.read_excel(WOMPY_FILE) # create DataFrame
     dfmatch_headers = dfform.columns.to_list() + dfwompy.columns.to_list()
@@ -149,24 +151,18 @@ def match_report():
             resultw = dfwompy[dfwompy['documento del pagador'] == str(t_cc)]
         
         if not resultw.empty :
-            serie = pd.Series(resultw.iloc[0])
-            c_rst = pd.concat([row,serie])
-            dfmatch.loc[len(dfmatch)] = c_rst
-        else:
-            #find by str(cc) in wompy
+            for indice, fila in resultw.iterrows():
+                c_rst = pd.concat([row,fila])
+                dfmatch.loc[len(dfmatch)] = c_rst
+        else :
+            #find by email in wompy
+            resultw = dfwompy[dfwompy['email del pagador'] == t_email] 
             if not resultw.empty :
                 serie = pd.Series(resultw.iloc[0])
                 c_rst = pd.concat([row,serie])
-                dfmatch.loc[len(dfmatch)] = c_rst        
+                dfmatch.loc[len(dfmatch)] = c_rst
             else:
-                #find by email in wompy
-                resultw = dfwompy[dfwompy['email del pagador'] == t_email]    
-                if not resultw.empty :
-                    serie = pd.Series(resultw.iloc[0])
-                    c_rst = pd.concat([row,serie])
-                    dfmatch.loc[len(dfmatch)] = c_rst
-                else:
-                    dfmatch.loc[len(dfmatch)] = row
+                dfmatch.loc[len(dfmatch)] = row
           
 
     dfmatch.to_excel(MATCH_FILE, index=False)
@@ -194,7 +190,7 @@ root = tk.Tk()
 style = ttk.Style(root)
 root.tk.call("source", "forest-light.tcl")
 root.tk.call("source", "forest-dark.tcl")
-root.title('Safetti 10k Monitoring V1.0')
+root.title('Safetti 10k Monitoring V2.0')
 style.theme_use("forest-dark")
 frame = ttk.Frame(root)
 frame.pack()
@@ -235,5 +231,5 @@ cols = ("#0", "#1", "#2", "#3")
 treeview = ttk.Treeview(treeFrame, show="headings", columns=cols, height=13)
 treeview.pack()
 treeScroll.config(command=treeview.yview)
-load_data()
+#load_data()
 root.mainloop()
